@@ -63,5 +63,6 @@ use_analysis <- function(project_name = ".") {
   use_dir(file.path("docs", "paper"))
   use_dir(file.path("docs", "presentation"))
 
+  setwd("../")
   TRUE
 }

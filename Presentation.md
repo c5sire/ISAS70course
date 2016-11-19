@@ -247,8 +247,77 @@ use that for cloning locally.
 
 ```r
 # Use the function for example:
-
 source("code/use_analysis.R")
 
 use_analysis("my_project")
 ```
+
+3. How to create reproducible reports with markdown and knitr - 1
+========================================================
+
+Reproducible Reports = literate programming (Donald Knuth, 1984):
+  - A program should be understood by humans. It should be readable like an essay.
+  - Vice versa: A statistical report should be reproducible.
+
+3. How to create reproducible reports with markdown and knitr - 2
+========================================================
+- Sweave: in R since at least 2002 (Friedrich Leisch)
+  - uses LaTex
+  - powerful
+  - still possible
+  - but steep learning curve
+- knitr: in R since 2012 (Yihui Xie)
+  - can use several markup languages (including LaTex and HTML)
+  - particular popular: markdown
+
+3. How to create reproducible reports with markdown and knitr - 3
+========================================================
+
+How?
+
+<center>
+<img src='figs/RR-web.jpg' width=700>
+</center>
+
+3. How to create reproducible reports with markdown and knitr - 4
+========================================================
+
+How?
+
+<center>
+<img src='figs/rr-2.jpg' width=700>
+</center>
+
+3. How to create reproducible reports with markdown and knitr - 5
+========================================================
+
+Markdown
+
+3. How to create reproducible reports with markdown and knitr - 6
+========================================================
+
+A code fragment:
+<pre>
+
+```r
+data(cars)
+n = nrow(cars)
+```
+
+</pre>
+
+Inserting a scalar into text:
+
+
+```r
+# The data set _cars_ has **`r n`** records.
+```
+
+3. How to create reproducible reports with markdown and knitr - 7
+========================================================
+
+Demo with RStudio
+
+
+4. How to make interactive reports - 1
+========================================================
