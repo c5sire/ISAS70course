@@ -37,7 +37,6 @@ For each of the 7 sections there will be three parts:
 2. demo
 3. hands-on
 
-As running example, weather data records from India will be used.
 
 
 Software
@@ -50,6 +49,7 @@ Install (Windows)
 - git
 - RStudio
 - pandoc
+- optional for PDF document versions: MikTex
 
 R packages
 ========================================================
@@ -57,6 +57,9 @@ R packages
 - devtools
 - markdown
 - roxygen2
+- testhat
+- knitr
+
 
 Reference documents
 ========================================================
@@ -113,6 +116,10 @@ git config --global color.ui auto
 
 Clone the c5sire/ISAS70 directory to your computer.
 
+- Copy address into the project wizard in RStudio is the most convenient
+method.
+- Setup your own account and then ‘fork’ the directory into your own. Then
+use that for cloning locally.
 
 1. Tracking changes using git and github - 6
 ========================================================
@@ -127,5 +134,121 @@ Clone the c5sire/ISAS70 directory to your computer.
   - git merge
 
 
+2.  Organzing an analysis project - 1
+========================================================
+
+1. Be organized
+2. Automate
+3. One directory for each project
+4. Separate final data from raw data
+5. Separate code from data
+6. Use relative paths
+7. Choose file names carefully
+8. Write ReadMe files
 
 
+2.  Organzing an analysis project - 2
+========================================================
+
+- README.md
+- src
+- data
+- data/code
+- data/NOTEBOOK.md
+- analyses
+- docs/paper
+- docs/presentation
+
+2.  Organzing an analysis project - 3
+========================================================
+
+
+```r
+  use_file(afile = "README.md",
+           line = "What is where in this project.")
+  use_dir("src")
+  use_dir("data")
+  use_file("data/NOTEBOOK.md",
+           "Describe your transformation and analytical steps in this lab notebook.")
+  use_dir(file.path("data", "code"))
+  use_dir("analyses")
+  use_dir("docs")
+  use_dir(file.path("docs", "paper"))
+  use_dir(file.path("docs", "presentation"))
+```
+
+2.  Organzing an analysis project - 4
+========================================================
+
+
+```r
+  # Create a project directory if it not already exists
+  # or use the current directory
+  if(project_name != "."){
+    if(!dir.exists(project_name)) dir.create(project_name)
+    setwd(project_name)
+    p_name = project_name
+  } else {
+    p_name = basename(getwd())
+  }
+```
+
+
+2.  Organzing an analysis project - 5
+========================================================
+
+
+```r
+ # Helper function to safely create directories
+  use_dir <- function(adir){
+    tryCatch({
+      if (!dir.exists(adir)) {
+        dir.create(adir)
+        message(paste0("Created directory: ", adir))
+      } else {
+        message(paste0("Directory: ", adir, " already exists."))
+      }
+
+    }, error = function(e) {
+      warning(paste0("Could not create directory: ", adir))
+      }
+    )
+  }
+```
+
+2.  Organzing an analysis project - 6
+========================================================
+
+
+```r
+# Helper function to safely create files
+  use_file <- function(afile = "README.md",
+                       line = "What is where in this project."){
+    # Write the README.md file
+
+    tryCatch({
+      if (!file.exists(afile)) {
+        write(paste0("# ", line ," *", p_name, "*"), file = afile)
+        message(paste0("Created file: ",  afile))
+      } else {
+        message(paste0("File exists: ", afile))
+      }
+    }, error = function(e) {
+      warning(paste0("Could not create file: ", afile))
+    })
+  }
+```
+
+
+
+2.  Organzing an analysis project - 6
+========================================================
+
+
+```r
+# Use the function for example:
+
+source("code/use_analysis.R")
+
+use_analysis("my_project")
+```
