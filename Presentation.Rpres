@@ -7,12 +7,14 @@ transition: fade
 
 ISAS70 conference at ICRISAT, Hyderabad, India
 
+
 Key theme
 ========================================================
 
 bioinformatics as a reproducible digital 'experiment'
 
-Recent review in Biometrical JournaL:
+A recent review in Biometrical Journal:
+
 
 - More than 50% of the code submissions could not be executed
 
