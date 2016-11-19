@@ -114,5 +114,18 @@ git config --global color.ui auto
 Clone the c5sire/ISAS70 directory to your computer.
 
 
+1. Tracking changes using git and github - 6
+========================================================
+
+[Restart] RStudio
+
+- Should have now a git tab
+- Supports only main tasks: commit & pull/push
+
+- other frequent tasks
+  - git branch
+  - git merge
+
+
 
 
