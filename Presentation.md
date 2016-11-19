@@ -19,23 +19,24 @@ Challenges
 - Is it easy to track my steps?
 
 
-Vision
+Key theme
 ========================================================
 
-- bioinformatics as a reproducible 'experiment'
+bioinformatics as a reproducible 'experiment'
 
 
 
 Objectives
 ========================================================
 
-1. How to organize files
-2. Learn tools for tracking changes (git & github)
+1. Learn tools for tracking changes (git & github)
+2. How to organize files
 3. How to create reproducible reports with markdown and knitr
 4. How to make interactive reports
 5. Modularizing your R code into packages
 6. How to document functions
 7. How to check that functions are correct
+8. Other useful tools
 
 
 Outline
@@ -69,13 +70,14 @@ R packages
 - roxygen2
 - testthat
 - knitr
+- ...
 
 
 Reference documents
 ========================================================
 
 - [git cheatsheet](docs/github-git-cheatsheet.pdf)
--
+
 
 
 1. Tracking changes using git - 1
@@ -93,7 +95,7 @@ Unlike prior source code tracking systems git
 - can be used 'offline'
 - can switch between repositories
 
-<img src='figs/github2.png' width=600>
+<img src='figs/github2.png' width=500>
 
 1. Tracking changes using git - 3
 ========================================================
@@ -103,7 +105,7 @@ Unlike prior source code tracking systems git
 - Push to repository at the 'end of day' (for backup and collaboration)
 - Pull from repository at the 'start of day'
 
-<img src='figs/git_commit_push.png' width=500>
+<img src='figs/git_commit_push.png' width=400>
 
 1. Tracking changes using git - 4
 ========================================================
@@ -116,7 +118,6 @@ git config --global user.email "[email address]"
 
 git config --global user.password "[password]"
 
-git config --global color.ui auto
 
 [cheatsheet](docs/github-git-cheat-sheet.pdf)
 
@@ -147,7 +148,7 @@ use that for cloning locally.
 2.  Organzing an analysis project - 1
 ========================================================
 
-1. Be organized
+1. Maintain a common structure
 2. Automate
 3. One directory for each project
 4. Separate final data from raw data
@@ -261,6 +262,36 @@ source("code/use_analysis.R")
 
 use_analysis("my_project")
 ```
+
+2.  Organizing an analysis project - 7
+========================================================
+
+## Explicit access to R packages used:
+
+
+```r
+utils::sessionInfo()
+```
+
+```
+R version 3.3.1 (2016-06-21)
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+Running under: OS X 10.12.1 (Sierra)
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] knitr_1.14
+
+loaded via a namespace (and not attached):
+[1] magrittr_1.5  formatR_1.4   tools_3.3.1   stringi_1.1.2 stringr_1.1.0
+[6] evaluate_0.10
+```
+
 
 3. Reproducible reports with markdown and knitr - 1
 ========================================================
@@ -442,6 +473,7 @@ Learn more on R package buildig with devtools: [Hickham: R packages](http://r-pk
 
 8. Other useful tools for R in bioinformatics - 1
 =======================================================
+Quick means to optimize execution ('Optimize late!')
 
 - byte compiling code
 - local parallel computing
@@ -465,17 +497,33 @@ myfunC <- compiler::compile(myfun)
 
 ```r
 # How many CPUs do I have
-
 n = parallel::detectCores()
 
 # Usually good idea to leave one core CPU (or node) free
 n = n - 1
-
 mc <- parallel::makeCluster(n)
 
-# Then just pass the cluster object to a special version of an apply-type function
-
+# Then just pass the cluster object to a special version
+# of an apply-type function
 parallel::parSapply(cl =  mc, X = avector, FUN = myfun)
 ```
+
+8. Other useful tools for R in bioinformatics - 4
+=======================================================
+
+Re-create complete environment in the cloud using virtual machines (like docker)
+
+
+Summary
+=======================================================
+
+- Keeping research reproducible is a constant challenge
+- Bioinformatic or computational biology is no exception
+- Document, document, document!
+- R has several levels of support for reproducible research including support to
+  - link data, results and final documents
+  - modularize and
+  - re-use
+
 
 
