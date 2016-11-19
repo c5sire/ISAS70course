@@ -7,6 +7,18 @@ transition: fade
 
 ISAS70 conference at ICRISAT, Hyderabad, India
 
+Key theme
+========================================================
+
+bioinformatics as a reproducible digital 'experiment'
+
+Recent review in Biometrical JournaL:
+
+- More than 50% of the code submissions could not be executed
+
+[Hofner, Schmid and Ebler: 2016](http://onlinelibrary.wiley.com/doi/10.1002/bimj.201500156/full)
+
+
 
 Motivation
 ========================================================
@@ -17,13 +29,6 @@ Challenges
 - Can I repeat easily my analysis on a similar data set?
 - Can I understand it 6 months or 6 years from now?
 - Is it easy to track my steps?
-
-
-Key theme
-========================================================
-
-bioinformatics as a reproducible 'experiment'
-
 
 
 Objectives
@@ -201,8 +206,6 @@ use that for cloning locally.
   } else {
     p_name = basename(getwd())
   }
-
-
 ```
 
 
@@ -280,10 +283,19 @@ utils::sessionInfo()
 ========================================================
 
 Reproducible Reports = literate programming (Donald Knuth, 1984):
-  - A program should be understood by humans. It should be readable like an essay.
+
+  - A program should be understood by humans. It should read like an essay.
   - Vice versa: A statistical report should be reproducible.
+  - Tools: WEB
 
 3. Reproducible reports with markdown and knitr - 2
+========================================================
+
+<center>
+<img src='figs/RR-web.jpg' width=600>
+</center>
+
+3. Reproducible reports with markdown and knitr - 3
 ========================================================
 - Sweave: in R since at least 2002 (Friedrich Leisch)
   - uses LaTex
@@ -294,22 +306,13 @@ Reproducible Reports = literate programming (Donald Knuth, 1984):
   - can use several markup languages (including LaTex and HTML)
   - particular popular: markdown
 
-3. Reproducible reports with markdown and knitr - 3
-========================================================
 
-How?
-
-<center>
-<img src='figs/RR-web.jpg' width=700>
-</center>
 
 3. Reproducible reports with markdown and knitr - 4
 ========================================================
 
-How?
-
 <center>
-<img src='figs/rr-2.jpg' width=700>
+<img src='figs/rr-2.jpg' width=600>
 </center>
 
 3. Reproducible reports with markdown and knitr - 5
@@ -389,7 +392,7 @@ for update frequency
 
 See the official R package documentation in your local help files (R/RStudio)
 
-- However: if developing with R tools alone vert tedious.
+- However: if developing with R tools alone very tedious.
 - Much easier: Use the devtools (H. Wickham) functions for supporting tools.
 
 ```{r eval=FALSE}
