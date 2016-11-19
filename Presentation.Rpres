@@ -1,8 +1,10 @@
-Reproducible analyses with R
+Reproducible analyses in bioinformatics with R
 ========================================================
 author: Reinhard Simon
-date: 10th November 2016
+date: 20th November 2016
 autosize: true
+
+ISAS70 conference at ICRISAT, Hyderabad, India
 
 
 Motivation
@@ -64,18 +66,18 @@ R packages
 Reference documents
 ========================================================
 
-- [git chestsheet](docs/github-git-cheatsheet.pdf)
+- [git cheatsheet](docs/github-git-cheatsheet.pdf)
 -
 
 
-1. Tracking changes using git and github
+1. Tracking changes using git - 1
 ========================================================
 
 - Similar to word review mode
 
-<img src='figs/github1.png' width=700>
+<img src='figs/github1.png' width=600>
 
-1. Tracking changes using git and github - 2
+1. Tracking changes using git - 2
 ========================================================
 
 Unlike prior source code tracking systems git
@@ -83,9 +85,9 @@ Unlike prior source code tracking systems git
 - can be used 'offline'
 - can switch between repositories
 
-<img src='figs/github2.png' width=700>
+<img src='figs/github2.png' width=600>
 
-1. Tracking changes using git and github - 3
+1. Tracking changes using git - 3
 ========================================================
 
 - Save & comment frequently using local 'commit'
@@ -95,7 +97,7 @@ Unlike prior source code tracking systems git
 
 <img src='figs/git_commit_push.png' width=500>
 
-1. Tracking changes using git and github - 4
+1. Tracking changes using git - 4
 ========================================================
 
 - Register your github credentials at the outset
@@ -111,7 +113,7 @@ git config --global color.ui auto
 [cheatsheet](docs/github-git-cheat-sheet.pdf)
 
 
-1. Tracking changes using git and github - 5
+1. Tracking changes using git - 5
 ========================================================
 
 Clone the c5sire/ISAS70 directory to your computer.
@@ -121,7 +123,7 @@ method.
 - Setup your own account and then ‘fork’ the directory into your own. Then
 use that for cloning locally.
 
-1. Tracking changes using git and github - 6
+1. Tracking changes using git - 6
 ========================================================
 
 [Restart] RStudio
@@ -164,11 +166,11 @@ use that for cloning locally.
 
 ```{r eval=FALSE}
   use_file(afile = "README.md",
-           line = "What is where in this project.")
+           line = "What is where.")
   use_dir("src")
   use_dir("data")
   use_file("data/NOTEBOOK.md",
-           "Describe your transformation and analytical steps in this lab notebook.")
+           "Note your steps.")
   use_dir(file.path("data", "code"))
   use_dir("analyses")
   use_dir("docs")
@@ -241,7 +243,7 @@ use that for cloning locally.
 
 
 
-2.  Organzing an analysis project - 6
+2.  Organizing an analysis project - 6
 ========================================================
 
 ```{r eval=FALSE}
@@ -253,14 +255,14 @@ use_analysis("my_project")
 
 ```
 
-3. How to create reproducible reports with markdown and knitr - 1
+3. Reproducible reports with markdown and knitr - 1
 ========================================================
 
 Reproducible Reports = literate programming (Donald Knuth, 1984):
   - A program should be understood by humans. It should be readable like an essay.
   - Vice versa: A statistical report should be reproducible.
 
-3. How to create reproducible reports with markdown and knitr - 2
+3. Reproducible reports with markdown and knitr - 2
 ========================================================
 - Sweave: in R since at least 2002 (Friedrich Leisch)
   - uses LaTex
@@ -271,7 +273,7 @@ Reproducible Reports = literate programming (Donald Knuth, 1984):
   - can use several markup languages (including LaTex and HTML)
   - particular popular: markdown
 
-3. How to create reproducible reports with markdown and knitr - 3
+3. Reproducible reports with markdown and knitr - 3
 ========================================================
 
 How?
@@ -280,7 +282,7 @@ How?
 <img src='figs/RR-web.jpg' width=700>
 </center>
 
-3. How to create reproducible reports with markdown and knitr - 4
+3. Reproducible reports with markdown and knitr - 4
 ========================================================
 
 How?
@@ -289,12 +291,14 @@ How?
 <img src='figs/rr-2.jpg' width=700>
 </center>
 
-3. How to create reproducible reports with markdown and knitr - 5
+3. Reproducible reports with markdown and knitr - 5
 ========================================================
 
 Markdown
 
-3. How to create reproducible reports with markdown and knitr - 6
+Demo with RStudio
+
+3. Reproducible reports with markdown and knitr - 6
 ========================================================
 
 A code fragment:
@@ -314,7 +318,7 @@ Inserting a scalar into text:
 
 ```
 
-3. How to create reproducible reports with markdown and knitr - 7
+3. Reproducible reports with markdown and knitr - 7
 ========================================================
 
 Demo with RStudio
@@ -416,5 +420,45 @@ On demand testing: Ctrl+Shift+T
 
 Learn more on R package buildig with devtools: [Hickham: R packages](http://r-pkgs.had.co.nz/)
 
+
+8. Other useful tools for R in bioinformatics - 1
+=======================================================
+
+- byte compiling code
+- local parallel computing
+- (Re-code in C++ - another talk ;-) and using Rcpp)
+
+8. Other useful tools for R in bioinformatics - 2
+=======================================================
+
+
+```{r eval=FALSE}
+
+myfun <- function(){}
+
+myfunC <- compiler::compile(myfun)
+
+```
+
+8. Other useful tools for R in bioinformatics - 3
+=======================================================
+
+
+```{r eval=FALSE}
+
+# How many CPUs do I have
+
+n = parallel::detectCores()
+
+# Usually good idea to leave one core CPU (or node) free
+n = n - 1
+
+mc <- parallel::makeCluster(n)
+
+# Then just pass the cluster object to a special version of an apply-type function
+
+parallel::parSapply(cl =  mc, X = avector, FUN = myfun)
+
+```
 
 
