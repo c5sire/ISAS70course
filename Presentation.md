@@ -19,6 +19,13 @@ Challenges
 - Is it easy to track my steps?
 
 
+Vision
+========================================================
+
+- bioinformatics as a reproducible 'experiment'
+
+
+
 Objectives
 ========================================================
 
@@ -340,6 +347,15 @@ Note: How to turn this presentation into a PDF for handouts:
 ```r
 knitr::pandoc(‘Presentation.Rpres’, format=‘latex’)
 ```
+
+
+4. How to make interactive reports - 3
+========================================================
+
+Notebooks
+
+Demo: Rstudio
+
 
 5. Modularizing your R code into packages - 1
 ========================================================
