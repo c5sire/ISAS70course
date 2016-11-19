@@ -3,6 +3,7 @@ Reproducible analyses in bioinformatics with R
 author: Reinhard Simon
 date: 20th November 2016
 autosize: true
+transition: fade
 
 ISAS70 conference at ICRISAT, Hyderabad, India
 
@@ -59,7 +60,7 @@ R packages
 - devtools
 - markdown
 - roxygen2
-- testhat
+- testthat
 - knitr
 
 
