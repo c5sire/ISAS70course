@@ -321,3 +321,102 @@ Demo with RStudio
 
 4. How to make interactive reports - 1
 ========================================================
+
+See: [example](docs/innteractive.Rmd)
+
+Add a plot: [example 2](docs/innteractive2.Rmd)
+
+
+4. How to make interactive reports - 2
+========================================================
+
+Note: How to turn this presentation into a PDF for handouts:
+
+```r
+knitr::pandoc(‘Presentation.Rpres’, format=‘latex’)
+```
+
+5. Modularizing your R code into packages - 1
+========================================================
+## Why a package?
+
+- Organize and re-use your own functions
+- Modularize, documment and test
+- Increase quality of code
+- Use examples for use case scenarios
+- Use tests for checking correctness
+- Use vignettes for tutorials
+- Use github for preview releases
+- Submit to CRAN when you have good production code; see CRAN rules
+for update frequency
+
+5. Modularizing your R code into packages - 2
+========================================================
+
+See the official R package documentation in your local help files (R/RStudio)
+
+- However: if developing with R tools alone vert tedious.
+- Much easier: Use the devtools (H. Wickham) functions for supporting tools.
+
+
+```r
+devtools::create()
+```
+
+5. Modularizing your R code into packages - 3
+========================================================
+
+Demo: We will create a package for the use_analysis function.
+
+
+6. How to document functions - 1
+========================================================
+
+Three levels:
+
+- Document input, output, parameters
+- Document simple use case: example
+- Document in context: tutorial (R speech: vignette)
+
+
+
+6. How to document functions - 2
+========================================================
+
+- Now very simple with roxygen2 / devtools.
+  - make sure project options are set
+- Use the RStudio documentation skeleton wizard to get started.
+
+6. How to document functions - 3
+========================================================
+
+- Put examples into inst/examples directory/
+  - set correct reference in markup
+
+6. How to document functions - 4
+========================================================
+
+- add a vignette in a 2-step process
+  devtools::use_vignette("MyTutorial")
+  devtools::build_vignette()
+
+
+7. How to check that functions are correct
+========================================================
+
+Use testthat package.
+
+
+```r
+devtools::use_testthat()
+
+testthat::auto_test_package()
+```
+
+On demand testing: Ctrl+Shift+T
+
+
+Learn more on R package buildig with devtools: [Hickham: R packages](http://r-pkgs.had.co.nz/)
+
+
+

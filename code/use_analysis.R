@@ -3,7 +3,7 @@
 #'
 #' Creates a project skeleton for data analysis.
 #'
-#' @param project_name character; defaults to current directory
+#' @param project_name character; default is to current directory
 #' @author Reinhard Simon
 use_analysis <- function(project_name = ".") {
 
@@ -64,5 +64,6 @@ use_analysis <- function(project_name = ".") {
   use_dir(file.path("docs", "presentation"))
 
   setwd("../")
+
   TRUE
 }
