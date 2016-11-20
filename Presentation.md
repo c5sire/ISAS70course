@@ -154,7 +154,7 @@ method.
 
 
 
-2.  Organzing an analysis project - 1
+2.  Organizing an analysis project - 1
 ========================================================
 
 1. Maintain a common structure
@@ -168,7 +168,7 @@ method.
 
 
 
-2.  Organzing an analysis project - 2
+2.  Organizing an analysis project - 2
 ========================================================
 
 - README.md
@@ -180,7 +180,7 @@ method.
 - docs/paper
 - docs/presentation
 
-2.  Organzing an analysis project - 3
+2.  Organizing an analysis project - 3
 ========================================================
 
 
@@ -198,7 +198,7 @@ method.
   use_dir(file.path("docs", "presentation"))
 ```
 
-2.  Organzing an analysis project - 4
+2.  Organizing an analysis project - 4
 ========================================================
 
 
@@ -215,7 +215,7 @@ method.
 ```
 
 
-2.  Organzing an analysis project - 5
+2.  Organizing an analysis project - 5
 ========================================================
 
 
@@ -237,7 +237,7 @@ method.
   }
 ```
 
-2.  Organzing an analysis project - 6
+2.  Organizing an analysis project - 6
 ========================================================
 
 
