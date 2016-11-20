@@ -1,6 +1,6 @@
 Reproducible analyses in bioinformatics with R
 ========================================================
-author: Reinhard Simon
+author: Reinhard Simon, International Potato Center (CIP)
 date: 20th November 2016
 autosize: true
 transition: fade
