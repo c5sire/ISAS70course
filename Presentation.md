@@ -449,11 +449,15 @@ Three levels:
   - make sure project options are set
 - Use the RStudio documentation skeleton wizard to get started.
 
+DEMO
+
 6. How to document functions - 3
 ========================================================
 
 - Put examples into inst/examples directory/
   - set correct reference in markup
+
+DEMO
 
 6. How to document functions - 4
 ========================================================
@@ -462,6 +466,7 @@ Three levels:
   devtools::use_vignette("MyTutorial")
   devtools::build_vignette()
 
+DEMO
 
 7. How to check that functions are correct
 ========================================================
@@ -477,6 +482,7 @@ testthat::auto_test_package()
 
 On demand testing: Ctrl+Shift+T
 
+DEMO
 
 Learn more on R package buildig with devtools: [Wickham: R packages](http://r-pkgs.had.co.nz/)
 
