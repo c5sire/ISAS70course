@@ -505,14 +505,15 @@ microbenchmark(
 ```{r eval=FALSE}
 # How many CPUs do I have
 n = parallel::detectCores()
-
 # Usually good idea to leave one core CPU (or node) free
 n = n - 1
 mc <- parallel::makeCluster(n)
 
 # Then just pass the cluster object to a special version
 # of an apply-type function
-res <- parallel::parSapply(cl =  mc, X = avector, FUN = myfun)
+X = 1:1000000
+f1 <- function(){             sapply(          X = X, FUN = sqrt)}
+f2 <- function(){parallel::parSapply(cl =  mc, X = X, FUN = sqrt)}
 ```
 
 8. Other useful tools for R in bioinformatics - 4
@@ -525,7 +526,7 @@ Summary
 =======================================================
 
 - Keeping research reproducible is a constant challenge
-- Bioinformatic or computational biology is no exception
+- Bioinformatics or computational biology is no exception
 - Document, document, document!
 - R has several levels of support for reproducible research including support to
   - link data, results and final documents
