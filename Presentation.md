@@ -16,9 +16,9 @@ Install (Windows)
 - R
 - Rtools
 - git
-- RStudio
 - pandoc
 - optional for PDF document versions: MikTex
+- RStudio
 
 R packages
 ========================================================
