@@ -129,17 +129,8 @@ git config --global user.password "[password]"
 [cheatsheet](docs/github-git-cheat-sheet.pdf)
 
 
+
 1. Tracking changes using git - 5
-========================================================
-
-Clone the c5sire/ISAS70 directory to your computer.
-
-- Copy address into the project wizard in RStudio is the most convenient
-method.
-- Setup your own account and then ‘fork’ the directory into your own. Then
-use that for cloning locally.
-
-1. Tracking changes using git - 6
 ========================================================
 
 [Restart] RStudio
@@ -150,6 +141,17 @@ use that for cloning locally.
 - other frequent tasks
   - git branch
   - git merge
+
+
+1. Tracking changes using git - 6
+========================================================
+
+https://github.com/c5sire/ISAS70course
+
+- Copy address into the project wizard in RStudio is the most convenient
+method.
+- Setup your own account and then ‘fork’ and 'clone' the directory into your own repository.
+
 
 
 2.  Organzing an analysis project - 1
@@ -163,6 +165,7 @@ use that for cloning locally.
 6. Use relative paths
 7. Choose file names carefully
 8. Write ReadMe files
+
 
 
 2.  Organzing an analysis project - 2
