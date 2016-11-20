@@ -11,7 +11,7 @@ ISAS70 conference at ICRISAT, Hyderabad, India
 Key theme
 ========================================================
 
-bioinformatics as a reproducible digital 'experiment'
+**Bioinformatics as a reproducible digital 'experiment'**
 
 A recent review in Biometrical Journal:
 
