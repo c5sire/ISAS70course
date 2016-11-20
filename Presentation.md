@@ -8,6 +8,30 @@ transition: fade
 ISAS70 conference at ICRISAT, Hyderabad, India
 
 
+Software
+========================================================
+
+Install (Windows)
+
+- R
+- Rtools
+- git
+- RStudio
+- pandoc
+- optional for PDF document versions: MikTex
+
+R packages
+========================================================
+
+- devtools
+- markdown
+- roxygen2
+- testthat
+- knitr
+- microbenchmark
+- parallel
+- ...
+
 Key theme
 ========================================================
 
@@ -58,27 +82,7 @@ For each of the 7 sections there will be three parts:
 
 
 
-Software
-========================================================
 
-Install (Windows)
-
-- R
-- Rtools
-- git
-- RStudio
-- pandoc
-- optional for PDF document versions: MikTex
-
-R packages
-========================================================
-
-- devtools
-- markdown
-- roxygen2
-- testthat
-- knitr
-- ...
 
 
 Reference documents
