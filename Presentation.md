@@ -499,7 +499,7 @@ Quick means to optimize execution:
 
 - byte compiling code within R
 - local parallel computing within R on a local machine with multiple cores
-- (Re-code in C++ - another talk ;-) and using Rcpp)
+
 
 8. Other useful tools for R in bioinformatics - 2
 =======================================================
@@ -507,9 +507,16 @@ Quick means to optimize execution:
 
 
 ```r
-myfun <- function(){}
-
+myfun <- function(){
+  for(i in 1:1000){cat(i)}
+}
 myfunC <- compiler::compile(myfun)
+
+library(microbenchmark)
+microbenchmark(
+  myfun,
+  myfunC
+)
 ```
 
 8. Other useful tools for R in bioinformatics - 3
