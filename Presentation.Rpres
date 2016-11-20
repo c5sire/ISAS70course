@@ -16,7 +16,8 @@ Key theme
 A recent review in Biometrical Journal:
 
 
-- More than 50% of the code submissions could not be executed
+- More than 90% of the code submissions could not be fully reproduced at some stage
+
 
 [Hofner, Schmid and Ebler: 2016](http://onlinelibrary.wiley.com/doi/10.1002/bimj.201500156/full)
 
