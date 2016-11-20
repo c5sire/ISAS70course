@@ -277,7 +277,7 @@ use_analysis("my_project")
 2.  Organizing an analysis project - 7
 ========================================================
 
-## Explicit access to R packages used:
+## Explicit list to R packages used (e.g. in a README.Rmd)
 
 
 ```r
